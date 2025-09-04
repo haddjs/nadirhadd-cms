@@ -8,12 +8,7 @@ export default async function handler(req, res) {
 		} catch (error) {
 			res.status(500).json({ error: "Failed to Fetch Projects" });
 		}
-	} else {
-		res.setHeader("Allow", ["GET"]);
-		res.status(405).end(`Method ${req.method} Not Allowed`);
-	}
-
-	if (req.method === "POST") {
+	} else if (req.method === "POST") {
 		try {
 			const { title, description, techStack, liveUrl, repoUrl } = req.body;
 			const requiredFields = ["title", "description", "techStack"];
@@ -36,9 +31,7 @@ export default async function handler(req, res) {
 		} catch (error) {
 			res.status(500).json({ error: "Failed to create project." });
 		}
-	}
-
-	if (req.method === "DELETE") {
+	} else if (req.method === "DELETE") {
 		const { id } = req.body;
 
 		await prisma.project.delete({
@@ -46,9 +39,7 @@ export default async function handler(req, res) {
 		});
 
 		res.status(200).json({ message: "Project deleted" });
-	}
-
-	if (req.method === "PUT") {
+	} else if (req.method === "PUT") {
 		const { id, title, description, techStack, liveUrl, repoUrl } = req.body;
 
 		await prisma.project.update({
@@ -66,5 +57,8 @@ export default async function handler(req, res) {
 		});
 
 		res.status(200).json({ message: "Project Updated" });
+	} else {
+		res.setHeader("Allow", ["GET", "DELETE", "PUT", "POST"]);
+		res.status(405).end(`Method ${req.method} Not Allowed`);
 	}
 }

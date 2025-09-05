@@ -1,4 +1,4 @@
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { experience } from "@/constants/data";
 import Image from "next/image";
 

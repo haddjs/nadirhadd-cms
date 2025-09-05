@@ -1,5 +1,7 @@
-import { Textarea } from "./ui/textarea";
-import { Button } from "./ui/button";
+import { Textarea } from "../ui/textarea";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+
 import Image from "next/image";
 
 const PersonalDashboard = () => {
@@ -23,7 +25,7 @@ const PersonalDashboard = () => {
 							height={150}
 							className="rounded-lg"
 						/>
-						<input type="file" className="bg-[#eee] p-2 cursor-pointer" />
+						<Input type="file" className="bg-[#eee] p-2 cursor-pointer" />
 					</div>
 				</form>
 				<div className="flex justify-end">

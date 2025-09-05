@@ -1,25 +1,29 @@
-import { Button } from "./ui/button";
+import { projects } from "@/constants/data";
+
 import {
 	Carousel,
 	CarouselContent,
 	CarouselItem,
 	CarouselNext,
 	CarouselPrevious,
-} from "./ui/carousel";
-import { Card, CardContent } from "./ui/card";
-
-import { projects } from "@/constants/data";
+} from "../ui/carousel";
+import { Card, CardContent } from "../ui/card";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
 
 import Image from "next/image";
 
-const ProjectsDashboard = () => {
+const ProjectPage = () => {
 	return (
 		<div className="flex flex-col gap-6 p-8">
-			<div className="flex justify-between">
+			<div className="flex flex-col gap-4">
 				<h1 className="text-3xl font-montserrat font-semibold">Projects</h1>
-				<Button size="lg" className="text-lg">
-					More
-				</Button>
+				<div className="flex justify-between">
+					<Button size="lg" className="text-lg">
+						Add New Project
+					</Button>
+					<Input className="w-1/5" placeholder="Search Project" />
+				</div>
 			</div>
 			{projects.map((project) => (
 				<div
@@ -67,4 +71,4 @@ const ProjectsDashboard = () => {
 	);
 };
 
-export default ProjectsDashboard;
+export default ProjectPage;

@@ -1,15 +1,15 @@
 export const navLinks = [
 	{
 		title: "Dashboard",
-		url: "/",
+		url: "/dashboard",
 	},
 	{
 		title: "Projects",
-		url: "/projects",
+		url: "/dashboard/projects",
 	},
 	{
 		title: "Experiences",
-		url: "/experiences",
+		url: "/dashboard/experiences",
 	},
 ];
 

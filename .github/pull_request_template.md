@@ -2,7 +2,7 @@
 
 <!-- Provide a brief description of the changes -->
 
-- Added dashboard UI including Personal, Projects, and Experiences sections.
+- Added 'Projects' page alongside with the UI
 
 ## 🛠️ Changes
 
